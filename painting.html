@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Painting Viewer</title>
+  <meta name="viewport" content="width=600, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main id="painting-display" class="hidden">
+    <img id="painting-img" alt="Painting image">
+    <h1 id="painting-title"></h1>
+    <div><strong>Artist: </strong>
+      <a id="artist-link" href="#"></a>
+    </div>
+    <div id="physical-desc"></div>
+    <div id="artist-desc"></div>
+    <div id="reviewer-desc"></div>
+    <div>
+      <span id="date-created"></span>
+      <span id="location"></span>
+    </div>
+  </main>
+  <div id="not-found" class="hidden">Painting not found.</div>
+  <script src="js/painting.js"></script>
+</body>
+</html>

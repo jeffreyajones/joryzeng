@@ -1,0 +1,14 @@
+# Exclude OCA workspace files
+.oca/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Optional: common OS junk
+.DS_Store
+Thumbs.db
+
+# Optional: Node, Python, etc., if they ever get added
+node_modules/
+__pycache__/

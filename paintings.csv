@@ -1,0 +1,3 @@
+id,image_path,title,artist_id,physical_desc,artist_desc,reviewer_desc,date_created,location
+1,img/starry_night.jpg,Starry Night,1,"Oil on canvas, 29 x 36 in.","A swirling night sky over a quiet town.","A masterpiece of post-impressionism, capturing emotion through color.",1889,"Museum of Modern Art, New York"
+2,img/water_lilies.jpg,Water Lilies,2,"Oil on canvas, 79 x 84 in.","My attempt to capture the play of light on water.","Lyrical and immersive, Monet’s lilies usher in the modern era.",1919,"Musée de l'Orangerie, Paris"

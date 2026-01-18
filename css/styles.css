@@ -1,0 +1,46 @@
+#painting-display {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 1em;
+  font-family: sans-serif;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #ccc;
+}
+#painting-img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 1em auto;
+  border-radius: 4px;
+}
+h1#painting-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+#artist-link {
+  font-weight: bold;
+  color: #2255aa;
+  text-decoration: none;
+}
+#artist-link:hover {
+  text-decoration: underline;
+}
+#physical-desc,
+#artist-desc,
+#reviewer-desc,
+#date-created,
+#location {
+  margin: 0.5em 0;
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+#not-found {
+  color: #b00;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 3em;
+}
