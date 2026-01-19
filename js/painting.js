@@ -1,63 +1,8 @@
 /**
  * painting.js
  * Script for displaying single painting info by id (from paintings.csv)
+ * Depends on js/common.js for shared helpers.
  */
-
-// Helper: Parse query string
-function getQueryParam(name) {
-  const regex = new RegExp("[?&]" + name + "=([^&]+)");
-  const execResult = regex.exec(globalThis.location.search);
-  return execResult ? decodeURIComponent(execResult[1]) : null;
-}
-
-// Simple CSV parser (no support for embedded commas/quotes, intended for clean CSVs)
-function parseCSV(data) {
-  const lines = data.trim().split(/\r?\n/);
-  const headers = lines[0].split(",").map(h => h.trim());
-  return lines.slice(1).map(line => {
-    // Handle quoted commas
-    const tokens = [];
-    let cur = '', inQuotes = false;
-    for (let i = 0; i < line.length; ++i) {
-      const char = line[i];
-      if (char === '"' && line[i + 1] !== '"') {
-        inQuotes = !inQuotes;
-      } else if (char === ',' && !inQuotes) {
-        tokens.push(cur);
-        cur = '';
-      } else {
-        cur += char;
-      }
-    }
-    tokens.push(cur);
-    // Remove surrounding quotes and whitespaces
-    return Object.fromEntries(headers.map((h, i) => [h, (tokens[i] ?? '').replace(/^"(.*)"$/,'$1').trim()]));
-  });
-}
-
-function setField(id, value) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  if (!value) {
-    el.classList.add('hidden');
-    return;
-  }
-  el.classList.remove('hidden');
-  if (id === 'painting-img') {
-    el.src = value;
-    el.alt = document.getElementById('painting-title').textContent || 'Painting image';
-    el.onerror = () => {
-      el.src = '';
-      el.alt = 'Image not available';
-      el.classList.add('hidden');
-    };
-  } else if (id === 'artist-link') {
-    el.href = value.href;
-    el.textContent = value.text;
-  } else {
-    el.textContent = value;
-  }
-}
 
 // Main logic
 function displayPainting() {
