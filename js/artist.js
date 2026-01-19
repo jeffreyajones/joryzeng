@@ -43,6 +43,12 @@ function displayArtist() {
         alt: artist.name || 'Artist image'
       });
 
+      // Set link to list.html?artist=n
+      const paintingsLink = document.getElementById('artist-paintings-link');
+      if (paintingsLink) {
+        paintingsLink.href = `list.html?artist=${artistId}`;
+      }
+
       display.classList.remove('hidden');
       notFound.classList.add('hidden');
     })
